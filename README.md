@@ -2,6 +2,71 @@
 
 Use CoinGecko API price API. Transform it into an array of objects.
 
+## Purpose
+
+The CoinGecko API returns prices in an object with coin IDs as keys.
+
+https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin&vs_currencies=usd,btc
+
+```
+{
+  "binancecoin":{
+    "usd": 47.35,
+    "btc": 0.00882646
+  },
+  "bitcoin":{
+    "usd": 62088,
+    "btc": 1.0
+  },
+  "ethereum":{
+    "usd": 4527.65,
+    "btc": 0.07300945
+  }
+}
+```
+
+This API returns prices in an array of objects with the coin ID as a value
+alongside the prices.
+
+/.netlify/functions/price?ids=bitcoin,ethereum,binancecoin&vs_currencies=usd,btc
+
+```
+[
+  {
+    "id": "binancecoin",
+    "usd": 547.35,
+    "btc": 0.00882646
+  },
+  {
+    "id": "bitcoin",
+    "usd": 62084,
+    "btc": 1
+  },
+  {
+    "id": "ethereum",
+    "usd": 4527.65,
+    "btc": 0.07300945
+  }
+]
+```
+
+This can be used with
+[this custom IMPORTJSON Google Sheets script](https://gist.github.com/paulgambill/cacd19da95a1421d3164)
+to display a table.
+
+1. Open a new Google Sheets document
+2. Click Tools > Script Editor
+3. Replace the default code with the script in the Gist above
+4. Rename it `ImportJSON.gs`
+5. Click Save
+6. In the spreadsheet, use the formula
+
+```
+=IMPORTJSON("https://example.com/.netlify/functions/price?ids=bitcoin,ethereum,binancecoin&vs_currencies=usd,btc")
+```
+
+This will give you a nice table of prices.
+
 ## License
 
 The MIT License

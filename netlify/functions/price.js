@@ -9,7 +9,7 @@ exports.handler = async function(event, context) {
       ids,
       vs_currencies,
     },
-  });//?ids=${ids}&vs_currencies=${vsCurrencies}`);
+  });
 
   const output = [];
 
