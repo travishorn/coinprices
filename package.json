@@ -4,7 +4,8 @@
   "description": "Use CoinGecko API price API. Transform it into an array of objects.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "netlify dev"
   },
   "keywords": [],
   "author": "Travis Horn <travis@travishorn.com> (https://travishorn.com/)",
