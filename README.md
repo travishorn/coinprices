@@ -56,8 +56,8 @@ to display a table.
 
 1. Open a new Google Sheets document
 2. Click Tools > Script Editor
-3. Replace the default code with the script in the Gist above
-4. Rename it `ImportJSON.gs`
+3. Create a new script called `ImportJSON.gs`
+4. Paste the code from the script in the Gist above
 5. Click Save
 6. In the spreadsheet, use the formula
 
@@ -66,6 +66,12 @@ to display a table.
 ```
 
 This will give you a nice table of prices.
+
+| Id          |      Usd |        Btc |
+|-------------|---------:|-----------:|
+| ethereum    |  4534.35 | 0.07307002 |
+| binancecoin |   548.24 | 0.00883464 |
+| bitcoin     | 62114.00 | 1.00000000 |
 
 ## License
 
